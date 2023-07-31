@@ -55,8 +55,13 @@ For each website, a suitable and specific CSS element should be chosen to downlo
 
 ### How to derive the `css element` and `index` for a `url`?
 1. Enter the website and find the link or button that a user will click to download the document usually.
+![SGX Webpage Homepage](images/sgx_webpage.png)
+
 2. Right-click on the link or button and press `Inspect` to open up the Inspector and reveal the source code for the element.
-3. Observe if there is any unique identifiers for this element - noting that the name of the document is likely to change as with each update.
+![SGX Webpage Right Click](images/sgx_webpage_rightclick.png)
+![SGX Webpage Inspector](images/sgx_webpage_inspector.png)
+
+3. Observe if there are any unique identifiers for this element - noting that the name of the document is likely to change as with each update.
    3.1 For example, note the file type of the download link, if it is `'.xlsx'` or `'.xls'`. If the Margin Update download link is the only such link on the entire webpage, using just the `'a[href$=".xlsx"]'` is sufficient to identify it uniquely.
    3.2 If a `css element` that uniquely identifies the download link is found, use `0` as the index value.
    3.3 If the `css element` identifies multiple links and the latest Margin Update document is not the first link, check if the sequence of the links is fixed. If it is fixed you can use the appropriate index to access the correct link.
