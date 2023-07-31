@@ -67,12 +67,12 @@ For each website, a suitable and specific CSS element should be chosen to downlo
    3.3 If the `css element` identifies multiple links and the latest Margin Update document is not the first link, check if the sequence of the links is fixed. If it is fixed you can use the appropriate index to access the correct link.
 4. Note if there are any additional steps you need to take to access the download link like logging into an account or selecting certain parameters. You will need to write additional logic in the `download_files` function for these websites.
 
-## **How to create an executable for distribution to end user?**
+## How to create an executable for distribution to end user?
 By creating a standalone executable for the application, it becomes simple for the user to run it without needing any software dependencies (i.e. Python, Selenium or the WebDriver). Additionally, it abstracts away access to the source code which prevents the end user from inadvertently changing and potentially breaking the code.
 
 However, this means that a developer is required to maintain the function of the code and repackage the binary any time the following updates are required.
 1. If new logic needs to be added to the source code, a new executable needs to be repackaged. For example, a new exchange is to be included, or an existing website's layout is changed.
-2. Since a fixed driver version used to create the executable, if there is a version update to the business users' Microsoft Edge, the executable needs to be repackaged with the new version of the WebDriver. 
+2. Since a fixed driver version used to create the executable, if there is a version update to the business users' Microsoft Edge, the executable needs to be repackaged with the new version of the WebDriver.
 
 ### Steps for creating the executable:
 1. Install `pyinstaller` with the following command:
@@ -89,4 +89,18 @@ However, this means that a developer is required to maintain the function of the
 6. `build` and `margin_scraper.spec` are non-essential and can be removed.
 7. The executable to be distributed to the end user can be found in the `dist` directory.
 
+## **Retaining Browser User Data**
+For CME exchange, the user needs to be logged in to download the margin update document. By default, a temporary profile is created at each launch of the Selenium MSEdge WebDriver which means that the user will need to log in to the website every single time. 
 
+To overcome this, every time the programme is run, a copy of the User Data for Edge (located at `"C:\\Users\\UserName\\AppData\\Local\\Microsoft\\Edge\\User Data"`) is made in the `./temp` directory. The user simply has to be logged in to the websites on their usual Edge browser, and the programme will use the copied profile (with all cookies, bookmarks, logins etc.) to run the scraping. At the start and at the end of the programme, the `./temp` directory is cleared.
+
+### Potential Issues
+1. If the user's saved data on the Edge browser is massive, creating and deleting the user data in the temp directory requires a lot of time and space. 
+2. Currently, the application uses the "Default" profile in the initialisation of the programme.
+
+    `edge_options.add_argument("profile-directory=Default")`
+
+   If the user has multiple profiles, the correct one will need to be specified in the source code.
+
+## **Logging for Troubleshooting**
+By default, logging is turned off. To turn on logging, go to the `main` function and change the `init_logger` function call to use `save_logs=False`. This will store logs locally at `./Logs` instead of just printing to stdout. The logs will be furnished with more information than stdout such as the time and level name of each log. 
