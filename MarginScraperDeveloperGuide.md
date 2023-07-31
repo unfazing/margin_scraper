@@ -94,5 +94,13 @@ For CME exchange, the user needs to be logged in to download the margin update d
 
 To overcome this, every time the programme is run, a copy of the User Data for Edge (located at `"C:\\Users\\UserName\\AppData\\Local\\Microsoft\\Edge\\User Data"`) is made in the `./temp` directory. The user simply has to be logged in to the websites on their usual Edge browser, and the programme will use the copied profile (with all cookies, bookmarks, logins etc.) to run the scraping. At the start and at the end of the programme, the `./temp` directory is cleared.
 
+### Potential Issues
+1. If the user's saved data on the Edge browser is massive, creating and deleting the user data in the temp directory requires a lot of time and space. 
+2. Currently, the application uses the "Default" profile in the initialisation of the programme.
+
+    `edge_options.add_argument("profile-directory=Default")`
+
+   If the user has multiple profiles, the correct one will need to be specified in the source code.
+
 ## **Logging for Troubleshooting**
 By default, logging is turned off. To turn on logging, go to the `main` function and change the `init_logger` function call to use `save_logs=False`. This will store logs locally at `./Logs` instead of just printing to stdout. The logs will be furnished with more information than stdout such as the time and level name of each log. 
