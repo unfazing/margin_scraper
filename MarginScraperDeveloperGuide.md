@@ -83,7 +83,7 @@ However, this means that a developer is required to maintain the function of the
 3. Check that the version Edge WebDriver in the `./driver` directory matches that of the end user.
 4. Create the standalone executable by running the following command in the main directory containing the `margin_scraper.py` script:
 
-    ` pyinstaller ".\margin_scraper.py" --onefile --add-binary "./driver/msedgedriver (old).exe;./driver"`
+    ` pyinstaller ".\margin_scraper.py" --onefile --add-binary "./driver/msedgedriver.exe;./driver"`
 
 5. After successfully running the command, the new directories, `build` and `dist`, and a new file, `margin_scraper.spec` should appear.
 6. `build` and `margin_scraper.spec` are non-essential and can be removed.
