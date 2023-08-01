@@ -5,7 +5,7 @@ title: User Guide for Margin Scraper
 
 # 1. Introduction
 
-This user guide will help you utilise the margin_scraper.exe application and troubleshoot any minor issues.
+This user guide will help you effectively utilise the `margin_scraper.exe` application and troubleshoot any minor issues.
 
 As of August 2023, the application downloads the latest margin update documents from the following exchanges:
 
@@ -38,56 +38,34 @@ As of August 2023, the application downloads the latest margin update documents 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## 1.2. Key Terms
+## 1 User Interface Components
 
-**Deck**<br>
+This section highlights the components of the margin_scraper.exe user interface. Refer to the description below for more information.
 
-A deck refers to a collection of flashcards that are organized together based on a specific topic or subject.
-For example, you might create a deck of flashcards to study for a math test, with each card containing a different math problem and solution.
+<img src="images/margin scraper icon.png" width="400" />
 
-**Card**<br>
-
-A card refers to a flashcard within a deck. A card contains a question or prompt, and the corresponding answer or solution.
-During a review session, the card will only show the question, encouraging you to actively recall the answer.
-Once you attempt the question, you can command the card to reveal the answer and test your knowledge.
-
-**Tag**<br>
-
-A tag refers to the level of difficulty (easy/medium/hard) you can assign to each card. It helps you prioritize your study time and focus on the flashcards that are more challenging or require more review.
-A card can only have at most one tag at any time.
-
-## 1.3. User Interface Components
-
-This section highlights the key components of PowerCards’ user interface. Refer to the description below for more information.
-
-![UiComponent](images/UiComponent.png)
-
-| Component          | Description                                                                                                  |
-|--------------------|--------------------------------------------------------------------------------------------------------------|
-| **Left Panel**     | This shows either a **list of decks** or the **current review statistics** depending on the mode you are in. |
-| **Right Panel**    | This shows either a **list of cards** or the **current card in review** depending on the mode you are in.    |
-| **Command Box**    | This is where you enter your **commands**.                                                                   |
-| **Result Display** | This is where the **results** of your commands will be shown.                                                |
+| Component             | Description                                                                                                  |
+|-----------------------|--------------------------------------------------------------------------------------------------------------|
+| **Application Window**           | The application opens a window that will update you about the progress of the scraping once it starts running.  |
+| **"Downloads" Folder**    | The Margin Update documents will be downloaded here. A new subfolder with the `date` and `time` of scraping is created each time you run the application. e.g. `Margins_Downloaded_on_YYYY-MM-DD_HHMMSS`    |
+|**"temp" folder**          | This folder can be ignored. |
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
 # 2. Quick Start
 
-1. Ensure you have Java `11` or above installed in your Computer. If you don't have it, you can download and install from this [link](https://www.oracle.com/sg/java/technologies/javase/jdk11-archive-downloads.html). Remember to download the correct version for your Operating System! (e.g. Window or Mac)
+1. Ensure you have Microsoft Edge installed in your Computer. It should come pre-installed with every Windows PC. If you don't have it, you can install it from the Microsoft Store.
 
-2. Download the latest `powercards.jar` from [here](https://github.com/AY2223S2-CS2103T-W11-3/tp/releases).
+2. Be logged in to the CME exchange website on your Edge browser - CME currently requires users to be logged in to download the margin updates.
 
-3. Copy the file to the folder you want to use as the _home folder_ for your PCs.
+3. Place the application (ie `margin_scraper.exe`) into your desired folder.
 
-4. Open a command terminal, enter the folder you put the jar file in using the `cd` command, and use the `java -jar powercards.jar` command to run the application.
+4. Double click the application to open the application window.
 
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+5. When prompted with `>>> Download EUREX only? Y/N`, type `y` and hit enter if you wish to download just EUREX updates. Type `n` and hit enter if you wish to download margin updates from all the exchanges.
 
-5. Type any command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
-
-6. Refer to the [Features](#3-features) below for details of each command.
+6. The application will open a new Edge browser window and you can leave it to run in the background!
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
@@ -125,7 +103,6 @@ Welcome to the Main Mode of the PowerCards application! This is the default mode
 
 In the Main Mode, you can quickly and easily create new decks, add new cards to your decks, delete and modify existing cards or decks as needed, and more!
 
-![MainModeComponent](images/MainModeComponent.png)
 
 | Component         | Description                                                                                                                                |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -151,370 +128,6 @@ Format: `addDeck DECK_NAME`
 
 Example:
 * `addDeck Science` will create a deck titled Science.
-
-### 3.3.2. Editing a Deck : `editDeck`
-
-You just created a deck, but you realised you made a typo! Fret not, you can easily edit the name of the deck with this command.
-
-Editing a deck name will not affect the cards stored inside it.
-
-Format: `editDeck INDEX DECK_NAME`
-- `INDEX` is the index of the deck you want to edit.
-- `DECK_NAME` is the new name you want to assign to the specified deck.
-    - The new deck name must not match any existing deck names (Deck names are case-sensitive).
-
-Example:
-- `editDeck 1 Chemistry` will edit the name of the first deck in the deck list to "Chemistry".
-
-### 3.3.3. Deleting a Deck : `deleteDeck`
-
-Once you have no use for a deck, you can delete the deck and all the cards within it with this command.
-
-Be careful, a deck once deleted cannot be retrieved!
-
-Format: `deleteDeck INDEX`
-- `INDEX` is the index of the deck in the deck list.
-
-Example: `deleteDeck 1` deletes the deck at index 1 and all the cards in that deck.
-
-### 3.3.4. Finding Decks by Keywords: `findDecks`
-
-If you want to find a specific deck among the many decks you have created, use this command to filter the decks based on their deck names!
-
-Format: `findDecks KEYWORD...`
-- You can include multiple KEYWORDS - as long as a deck's name contains at least one keyword, the deck will be found.
-- At least one KEYWORD must be given.
-- This command does not support partial words, e.g., `findDecks program` will not return the same list of decks as `findDecks programming`, despite `program` being a partial word of `programming`.
-- Keywords are **case-insensitive**. `findDecks programming` and `findDecks PROGRAMMING` will return the same filtered decks.
-- Deck names matching at least one keyword will be returned (i.e. `OR` search).
-
-Example:
-- `findDecks science programming` filters decks whose names match keywords `science` **or** `programming`. Below is the application display right after this command is executed.
-
-![FindCardsCommandDisplay](images/FindDecksCommandDisplay.png)
-
-<div markdown="block" class="alert alert-info">
-
-💡 **Tip:**
-- Notice there is a small text box `Finding Decks with keyword(s): science programming` below the filtered list of decks. This text box is displayed as long as the decks are filtered. It is to help you remember what you have previously searched for!
-- Notice that the result display will show how many decks have been listed.
-
-</div>
-
-### 3.3.5. Showing all Decks : `showDecks`
-
-After you filtered the decks using `findDecks`, you can see all the existing decks again using this command.
-
-Format: `showDecks`
-
-### 3.3.6. Selecting a Deck : `selectDeck`
-
-Once a deck has been created, you can access the list of cards inside it with this command.
-Refer to the [Main Mode - After Selecting a Deck](#34-main-mode---after-selecting-a-deck) section to find out what commands you can run with a deck selected!
-
-<div markdown="block" class="alert alert-info">
-
-💡 **Tip:** <br>
-
-- A deck can be selected and accessed anytime as long as you are in the Main Mode.
-- This means you can switch to different deck while already selecting another deck!
-
-</div>
-
-Format: `selectDeck INDEX`
-- `INDEX` is the index of the deck in the deck list.
-
-Examples:
-* `selectDeck 2` will select the deck at index 2.
-    * The cards in this deck (if exist) will be displayed on the right panel.
-
-### 3.3.7. Clearing the data : `clear`
-
-Perhaps you want to start over and create new sets of decks and cards.
-This command clears all the existing decks and their associated cards from the application database.
-
-<div markdown="span" class="alert alert-warning">
-
-:exclamation: **Caution:** This command is irreversible! You cannot retrieve your data after executing this command.
-
-</div>
-
-Format: `clear`
-- Upon executing the command, a pop-up alert will appear and request you to confirm your decision.
-  <br>
-  ![clear confirm](./images/ClearConfirm.png)
-
-- Selecting `Yes` will clear all data.
-
-<div style="page-break-after: always;"></div>
-
-## 3.4. Main Mode - After Selecting a Deck
-
-With a deck selected, you can see all the cards in the deck on the right panel!
-Now you can interact with the cards in the selected deck.
-
-Note that you will not be able to make any deck-related changes (e.g. `addDeck`, `deleteDeck`) until you unselect the current deck.
-
-### 3.4.1. Adding a Card: `addCard`
-
-This command allows you to add a card to the **selected** deck.
-
-A card must contain a question and an answer. It may contain at most **one** difficulty tag.
-
-Format: `addCard q\QUESTION a\ANSWER [t\TAG]`
-- `QUESTION` field of the card is **case-sensitive** and cannot be duplicated in the same deck.
-    - For example, if you already have a card with question `What is a loop` in the deck, you cannot create another card in the same deck with question `What is a loop`.
-    - However, you can create another card with question `What is a LOOP` since `LOOP` may be an acronym.
-- The same `QUESTION` may exist in multiple decks, i.e., a card can belong to multiple decks.
-
-<div markdown="block" class="alert alert-info">
-
-💡 **Tip:** <br>
-
-- A tag can only be of value Easy, Medium, or Hard.
-- Tags are **case-insensitive** (`easy` and `EASY` are treated the same).
-
-</div>
-
-Examples:
-* `addCard q\What is chemical symbol for Oxygen? a\O` adds an untagged card with the given question and answer to the deck.
-* `addCard q\What is gravity? a\A force of attraction between objects due to their mass t\Easy` adds a card tagged as "easy" with the given question and answer to the deck.
-
-<div style="page-break-after: always;"></div>
-### 3.4.2. Deleting a Card : `deleteCard`
-
-You can swiftly delete an existing card from the current selected deck with this command.
-
-<div markdown="span" class="alert alert-warning">
-:exclamation: **Caution:**
-Note that this is irreversible!
-</div>
-
-Format: `deleteCard INDEX`
-* Deletes the card at the specified `INDEX`. The card's index can be found in the displayed card list.
-
-Example:
-- `deleteCard 2` will delete the 2nd card in the deck.
-
-### 3.4.3. Editing a Card : `editCard`
-
-If you made mistakes while creating a card, no problem! You can easily edit any existing card using this command.
-
-Format: `editCard INDEX [q\QUESTION] [a\ANSWER] [t\TAG]`
-
-* Edits the card at the specified `INDEX`. The card's index can be found in the displayed card list.
-* At least **one** of the optional components must be provided.
-* Existing values of the card will be replaced by the input values.
-* If the same prefix appears multiple times, only the **last** occurrence of the prefix will be considered.
-
-Examples:
-* `editCard 1 q\What is chemical symbol for Carbon? a\C` edits the question and answer of the 1st card to be `What is chemical symbol for Carbon?` and `C` respectively.
-* `edit 2 q\What is a recursion?` will only edit the question of the 2nd card to `What is a recursion?`. The other fields of the card (answer, tag) remain unchanged.
-* `edit 3 q\What is a recursion? q\What is a loop?` edits the question of the 3rd card to be `What is a loop?`.
-
-<div style="page-break-after: always;"></div>
-### 3.4.4. Finding Cards by Keywords in Question : `findCards`
-
-This command allows you to find specific cards you want to interact with based on the keyword(s) you enter.
-
-It shows all the cards in the selected deck whose **questions** contain **any** of the given keyword(s).
-
-You may interact with the filtered cards using their new indices, through commands such as `editCard` and `deleteCard`.
-
-Format: `findCards KEYWORD...`
-- You can include multiple KEYWORDS - as long as a card's question contains at least one keyword, the card will be found.
-- At least one KEYWORD must be given.
-- Keywords are case-insensitive. `findCards what` and `findCards WHAT` will return the same filtered cards.
-- Question field of cards matching at least one keyword will be returned (i.e. `OR` search).
-- This command does not support partial words, e.g., `findCards partia` and `findCards partial` will **not** return the same result despite "partia" being a partial word of "partial".
-
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-Since the command does not support partial words, take extra caution when searching for words ending with punctuation! For example `findCards loop` will **not** return a Card with question `What is a loop?`. For this example, you should search `findCards loop?` instead.  
-</div>
-
-Example:
-- `findCards recursion loop` shows all the cards whose questions match the keywords `recursion` **or** `loop`.
-
-![FindCardsCommandDisplay](images/FindCardsCommandDisplay.png)
-
-<div markdown="block" class="alert alert-info">
-
-💡 **Tip:**
-- There is a small text box `Finding Cards with keyword(s): recusion loop` below the filtered list of cards. It remains on display as long as the cards are filtered. This is to help you remember what keywords you are searching for!
-- The result display will show how many cards matching the keywords have been found.
-</div>
-
-### 3.4.5. Showing all Cards : `showCards`
-
-After you filtered the cards using `findCards`, you can see all the cards in the selected deck again using this command.
-
-Format: `showCards`
-
-### 3.4.6. Unselecting a Deck : `unselectDeck`
-
-If you want to make deck-related changes, you must first unselect the current deck you are in.
-Refer to the [Main Mode - Before Selecting a Deck](#33-main-mode---before-selecting-a-deck) section to find out what commands you can run without a deck selected!
-
-This command allows you to unselect the currently selected deck.
-
-Format: `unselectDeck`
-- Upon unselecting a deck, you can no longer see the cards inside that deck.
-
-## 3.5. Before entering Review Mode
-
-### 3.5.1. Setting the Limit of Cards per Review: `setLimit`
-
-Suppose you have a really long deck of cards, but you only want to test yourself on 20 cards this session.
-Use this function to set an upper limit on the number of cards per review.
-While a limit is set, the review deck will be truncated to the card limit.
-
-You can set the limit back to 'none' to view all cards in the deck for future reviews.
-
-Format: `setLimit LIMIT_NUM` or `setLimit none`
-- `LIMIT_NUM` must be an integer between 1 and 2147483647 inclusive.
-- If `LIMIT_NUM` is greater than the number of cards inside the deck to be reviewed, you will review **all** the cards in that deck.
-
-Examples:
-* `setLimit 30`
-* `setLimit none`
-
---------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
-
-## 3.6. Review Mode
-
-Once ready, you can enter the Review Mode to test yourself on the cards of a deck. You can also specify the difficulties of the cards of the deck you want to test, e.g., you just want test medium and hard cards only.
-
-![ReviewModeComponent](images/ReviewModeComponent.png)
-
-In the review mode, you will see:
-- On the left panel - a review panel with the updated statistics of the current review (current deck, current card number, number of cards tagged each difficulty) and a navigation guide of the keys.
-- On the right panel - the card that is currently under review, which you can flip to reveal the answer and then tag with a given difficulty.
-
-To review a card, you can attempt the question on the card (in your mind or on a paper if you prefer!) before flipping it.
-
-Flipping a card reveals the answer - based on how close your guess was to the answer or how confident you were when attempting, you can tag the card with a difficulty of easy, medium or hard.
-
-Your goal would be to eventually have all cards in a deck be tagged as easy!
-
-<div style="page-break-after: always;"></div>
-### 3.6.1. Starting a Review: `review`
-From the Main Mode, run this command to enter the Review Mode!
-
-Format: `review INDEX [-e] [-m] [-h]`
-
-* Reviews the cards from the deck with the specified INDEX. The deck's index can be found in the displayed deck list.
-    - `-e` include this flag to test cards tagged as "easy"
-    - `-m` include this flag to test cards tagged as "medium"
-    - `-h` include this flag to test cards tagged as "hard"
-    - Omit any flags to test all cards in the deck
-
-Examples:
-* `review 5 -e -h` lets you review all the cards tagged as "easy" or "hard" in the 5th deck.
-* `review 2` lets you review all the cards in the 2nd deck.
-
-### 3.6.2. Ending the Review: `endReview`
-
-Ends the review and returns to the main mode. You can use this when you reach the end of the review deck or at any point during the review.
-
-Format: `endReview`
-
-<div style="page-break-after: always;"></div>
-### 3.6.3. Review Command Keys
-
-![Review Command Keys](images/ReviewCommandKeys.png)
-
-The diagram above shows the commands you will use to interact with the cards during a Review.
-You must press the Enter key after typing in the command to execute it, e.g., pressing the key `p` alone will not flip the card.
-
-Notice that the keys are all close to the Enter key so that you can breeze through decks of cards ergonomically!
-- The top row of keys are commands to flip cards, or move to the previous/next cards.
-- The bottom row of keys are commands to tag the difficulty of the current card.
-
-<div style="page-break-after: always;"></div>
-### 3.6.4. Flipping the Card: `p`
-
-Flips the card to reveal or hide the answer.
-
-Format: `p`
-- `p` is case-insensitive (`P` is also a valid command).
-  ![FlipCardCommandDisplay](images/FlipCardCommandDisplay.png)
-
-### 3.6.5. Next Card: `]`
-
-Displays the next card. After tagging the current card, you use this command to move on to the next card.
-
-<div markdown="block" class="alert alert-info">:information_source: **Note:** 
-If the card you are currently reviewing is the last card, the result display will display `This is the last card.` when you use this command.
-</div>
-
-Format: `]`
-
-### 3.6.6. Previous Card: `[`
-
-Displays the previous card. Useful if you want to amend the tag of the previous card!
-
-<div markdown="block" class="alert alert-info">:information_source: **Note:** 
-If the card you are currently reviewing is the first card, the result display will display `This is the first card.` when you use this command.
-</div>
-
-Format: `[`
-
-### 3.6.7. Tagging the Card as Easy: `l`
-
-Tags the current card as easy. This replaces any previous tags.
-
-Format: `l`
-- `l` is case-insensitive (`L` is also a valid command).
-
-### 3.6.8. Tagging the Card as Medium: `;`
-
-Tags the current card as medium. This replaces any previous tags.
-
-Format: `;`
-
-### 3.6.9. Tagging the Card as Hard: `'`
-
-Tags the current card as hard. This replaces any previous tags.
-
-Format: `'`
-
---------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
-
-## 3.7. Other Features
-
-### 3.7.1. Viewing Help : `help`
-
-If you are unsure about how to use PowerCards, you can always execute this command.
-This command creates a pop-up with a link to this User Guide, where you can access clear and concise instructions for each command and features of the app.
-
-[//]: # (![help message]&#40;images/helpMessage.png&#41;)
-
-Format: `help`
-
-### 3.7.2. Exiting the Program : `exit`
-
-At any point, run this command to exit the program.
-
-Format: `exit`
-
-### 3.7.3. Saving the Data
-
-PCs data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
-
-### 3.7.4. Editing the Data File
-
-PCs data are saved as a JSON file `[JAR file location]/data/masterdeck.json`. Advanced users are welcome to update data directly by editing that data file.
-
-<div markdown="block" class="alert alert-warning">
-
-:exclamation: **Caution:**<br>
-
-* If your changes to the data file make its format invalid, PowerCards will start with an empty data file on the next run.
-* Do **not** type in any command as this will overwrite and discard your previous data! Simply close the application manually and edit the data file again until it is in valid format.
-
-</div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -543,59 +156,3 @@ PCs data are saved as a JSON file `[JAR file location]/data/masterdeck.json`. Ad
 
 **Q**: What if I would like to include the prefix within my card (question or answer) or deck name? (For example `addCard q\What is q\a a\It means q slash a` should add a card with question `What is q\a` instead of `a`)<br>
 **A**: At the moment we do not support that. However, we plan to support this feature in the next iteration. We also like to point out that this is the reason why we use backslash &#92; rather than forward slash `/` for this current iteration as backslash is less commonly use than forward slash.
---------------------------------------------------------------------------------------------------------------------
-<div style="page-break-after: always;"></div>
-
-# 5. Command Summary
-
-## 5.1. Main Mode - before selecting a Deck
-
-| Action         | Format, Examples                                                     |
-|----------------|----------------------------------------------------------------------|
-| Select Deck    | `selectDeck INDEX` <br /> e.g., `selectDeck 2`                       |
-| Add Deck       | `addDeck DECK_NAME` <br /> e.g., `addDeck Science`                   |
-| Edit Deck      | `editDeck INDEX DECK_NAME` <br /> e.g., `editDeck 3 Physics`         |
-| Delete Deck    | `deleteDeck INDEX`                                                   |
-| Find Decks     | `findDecks KEYWORDS...` <br /> e.g., `findDecks programming history` |
-| Show All Decks | `showDecks`                                                          |
-| Start Review   | `review INDEX`                                                       |
-| Set Limit      | `setLimit LIMIT_NUM` <br /> e.g., `setLimit 30` or `setLimit none`   |
-| Clear          | `clear`                                                              |
-| Help           | `help`                                                               |
-| Exit           | `exit`                                                               |
-
-<div style="page-break-after: always;"></div>
-
-## 5.2. Main Mode - after selecting a Deck
-
-| Action         | Format, Examples                                                                                                                                 |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Select Deck    | `selectDeck INDEX` <br /> e.g., `selectDeck 2`                                                                                                   |
-| Unselect Deck  | `unselectDeck`                                                                                                                                   |
-| Add Card       | `addCard q\QUESTION a\ANSWER [t\TAG]` <br /> e.g., `addCard q\What is gravity? a\A force of attraction between objects due to their mass t\Easy` |
-| Edit Card      | `editCard INDEX [q\QUESTION] [a\ANSWER] [t\TAG]` <br /> e.g., `editCard 1 q\What is chemical symbol for Carbon? a\C t\Hard`                      |
-| Delete Card    | `deleteCard INDEX`                                                                                                                               |
-| Find Cards     | `findCards KEYWORDS...`                                                                                                                          |
-| Show All Cards | `showCards`                                                                                                                                      |
-| Start Review   | `review INDEX`                                                                                                                                   |
-| Set Limit      | `setLimit LIMIT_NUM` <br /> e.g., `setLimit 30`                                                                                                  |
-| Help           | `help`                                                                                                                                           |
-| Exit           | `exit`                                                                                                                                           |
-
-<div style="page-break-after: always;"></div>
-
-## 5.3. Review mode
-
-| Action        | Format, Examples |
-|---------------|------------------|
-| End Review    | `endReview`      |
-| Flip          | `p` or `P`       |
-| Previous Card | `[`              |
-| Next Card     | `]`              |
-| Tag Easy      | `l` or `L`       |
-| Tag Medium    | `;`              |
-| Tag Hard      | `'`              |
-| Help          | `help`           |
-| Exit          | `exit`           |
-
-
