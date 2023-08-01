@@ -7,7 +7,7 @@ title: User Guide for Margin Scraper
 
 This user guide will help you utilise the margin_scraper.exe application and troubleshoot any minor issues.
 
-As of Aug 2023, the application downloads the latest margin update documents from the following exchanges:
+As of August 2023, the application downloads the latest margin update documents from the following exchanges:
 
 |     | Exchange     | URL                                                                                                              |
 |-----|--------------|------------------------------------------------------------------------------------------------------------------|
