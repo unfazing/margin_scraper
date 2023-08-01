@@ -3,6 +3,9 @@ layout: page
 title: User Guide for Margin Scraper
 ---
 
+* Table of Contents
+  {:toc}
+
 # 1. Introduction
 
 This user guide will help you effectively utilise the `margin_scraper.exe` application and troubleshoot any minor issues.
@@ -32,9 +35,6 @@ As of August 2023, the application downloads the latest margin update documents 
 | 19  | LME          | 'https://www.lme.com/en-GB/LME-Clear/Risk-management/Margin-Parameter-files'                                     |
 | 20  | ENPAR        | 'https://www.lch.com/risk-management/risk-management-sa/sa-risk-notices'                                         |
 
-* Table of Contents
-  {:toc}
-
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -42,12 +42,12 @@ As of August 2023, the application downloads the latest margin update documents 
 
 This section highlights the components of the margin_scraper.exe user interface. Refer to the description below for more information.
 
-<img src="images/margin scraper welcome message.png" width="400" />
-*Welcome message when the application window is first opened.*
+<img src="images/margin scraper welcome message.png" width="400" /> 
+_Welcome message when the application window is first opened._
 
 
-<img src="images/margin scraper folder structure.png" width="400" />
-*Folder structure created when the application is run.*
+<img src="images/margin scraper folder structure.png" width="400" /> 
+_Folder structure created after the application is run._
 
 | Component                       | Description                                                                                             |
 |---------------------------------|---------------------------------------------------------------------------------------------------------|
