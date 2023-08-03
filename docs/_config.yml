@@ -1,0 +1,7 @@
+theme: minima
+
+header_pages:
+  - UserGuide.md
+  - DeveloperGuide.md
+
+markdown: kramdown
