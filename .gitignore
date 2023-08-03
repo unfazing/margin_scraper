@@ -4,7 +4,6 @@
 # ignore ALL files in ANY directory named temp
 temp/ 
 
-dist/
 build/
 *.spec
 .gitignore
