@@ -56,22 +56,24 @@ For each website, a suitable and specific CSS element should be chosen to downlo
 
 ### How to derive the `css element` and `index` for a `url`?
 1. Enter the website and find the link or button that a user will click to download the document usually.
-<img src="images/sgx_webpage.png" width="400" />
+<img src="images/sgx_webpage.png" width="500" />
 
 2. Right-click on the link or button and press `Inspect` to open up the Inspector and reveal the source code for the element.
-<img src="images/sgx_we  bpage_rightclick.png" width="400" />
-<img src="images/sgx_webpage_inspector.png" width="400" />
 
-3. Observe if there are any unique identifiers for this element - noting that the name of the document is likely to change as with each update.
+<img src="images/sgx_webpage_rightclick.png" width="500" />
+
+<img src="images/sgx_webpage_inspector.png" width="500" />
+
+4. Observe if there are any unique identifiers for this element - noting that the name of the document is likely to change as with each update.
    3.1 For example, note the file type of the download link, if it is `'.xlsx'` or `'.xls'`. If the Margin Update download link is the only such link on the entire webpage, using just the `'a[href$=".xlsx"]'` is sufficient to identify it uniquely.
    3.2 If a `css element` that uniquely identifies the download link is found, use `0` as the index value.
    3.3 If the `css element` identifies multiple links and the latest Margin Update document is not the first link, check if the sequence of the links is fixed. If it is fixed you can use the appropriate index to access the correct link.
-4. Note if there are any additional steps you need to take to access the download link like logging into an account or selecting certain parameters. You will need to write additional logic in the `download_files` function for these websites.
+5. Note if there are any additional steps you need to take to access the download link like logging into an account or selecting certain parameters. You will need to write additional logic in the `download_files` function for these websites.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## How to create an executable for distribution to end user?
+## **Distribution to End User**
 By creating a standalone executable for the application, it becomes simple for the user to run it without needing any software dependencies (i.e. Python, Selenium or the WebDriver). Additionally, it abstracts away access to the source code which prevents the end user from inadvertently changing and potentially breaking the code.
 
 However, this means that a developer is required to maintain the function of the code and repackage the binary any time the following updates are required.
@@ -91,7 +93,7 @@ However, this means that a developer is required to maintain the function of the
 
 5. After successfully running the command, the new directories, `build` and `dist`, and a new file, `margin_scraper.spec` should appear.
 6. `build` and `margin_scraper.spec` are non-essential and can be removed.
-7. The executable to be distributed to the end user can be found in the `dist` directory.
+7. The executable, `margin_scraper.exe`, to be distributed to the end user can be found in the `dist` directory.
 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
