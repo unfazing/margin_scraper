@@ -110,6 +110,8 @@ To overcome this, every time the programme is run, a copy of the User Data for E
     `edge_options.add_argument("profile-directory=Default")`
 
    If the user has multiple profiles, the correct one will need to be specified in the source code.
+   
+--------------------------------------------------------------------------------------------------------------------
 
 ## **Logging for Troubleshooting**
 By default, logging is turned off. To turn on logging, go to the `main` function and change the `init_logger` function call to use `save_logs=False`. This will store logs locally at `./Logs` instead of just printing to stdout. The logs will be furnished with more information than stdout such as the time and level name of each log. 
