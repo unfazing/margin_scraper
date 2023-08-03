@@ -77,13 +77,15 @@ _Folder structure created after the application is run._
 6. The application will open a new Edge browser window, and you can leave it to run in the background!
 
 --------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 # **4. FAQ**
 
-### **Q**: *The application is unable to download particular files, what should I do?* <br>
+#### **Q**: *The application is unable to download particular files, what should I do?* <br>
 **A**: Restart your computer and run the application again. If the download still fails, check the respective website where the failed download occurs. If the website has changed or the problem persists, notify the developer to update the source code. If the failed download is on the CME exchange, check that you have logged in and are kept logged in to the CME website on your normal Edge browser.
 
-### **Q**: *My Edge browser updated to a new version and the application no longer runs.* <br>
+#### **Q**: *My Edge browser updated to a new version and the application no longer runs.* <br>
 **A**: Notify the developer about your new browser version so that they can update the MSEdge WebDriver version packaged with the application.
 
-### **Q**: *I want to add more websites to scrape from.* <br>
+#### **Q**: *I want to add more websites to scrape from.* <br>
 **A**: Unfortunately, as every website is different, the code logic will need to be written specific for each site. The only way to add or remove websites is to notify the developer and inform them about the changes you require.
