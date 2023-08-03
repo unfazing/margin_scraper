@@ -58,7 +58,7 @@ For each website, a suitable and specific CSS element should be chosen to downlo
 <img src="images/sgx_webpage.png" width="400" />
 
 2. Right-click on the link or button and press `Inspect` to open up the Inspector and reveal the source code for the element.
-<img src="images/sgx_webpage_rightclick.png" width="400" />
+<img src="images/sgx_we  bpage_rightclick.png" width="400" />
 <img src="images/sgx_webpage_inspector.png" width="400" />
 
 3. Observe if there are any unique identifiers for this element - noting that the name of the document is likely to change as with each update.
