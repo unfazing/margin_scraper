@@ -4,8 +4,5 @@ theme: minima
 header_pages:
   - UserGuide.md
   - DeveloperGuide.md
-
-repository: "unfazing/margin_scraper"
-github_icon: "images/github_icon.png"
-
+  
 markdown: kramdown
