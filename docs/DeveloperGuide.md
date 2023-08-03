@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Developer Guide for Margin Scraper
+title: Developer Guide
 ---
 * Table of Contents
 {:toc}
