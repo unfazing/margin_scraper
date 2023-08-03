@@ -14,15 +14,6 @@ This user guide will help you effectively utilise the `margin_scraper.exe` appli
 
 As of August 2023, the application downloads the latest margin update documents from the following exchanges:
 
-## **Acknowledgements**
-
-* This application makes use of [Selenium 4.9.1](https://www.selenium.dev/), an open source library for browser automation.
-* This application uses MS Edge WebDriver version 115 as the browser driver.
-* This application and related guides are created by Kok Hai, Software Intern at Phillip Nova, in tandem with Xiao Tian, Operations and Settlements Department.
-
-## **Overview**
-As of August 2023, the application downloads the latest margin update documents from the following exchanges:
-
 |     | Exchange     | URL                                                                                                              |
 |-----|--------------|------------------------------------------------------------------------------------------------------------------|
 | 1   | EUREX        | https://www.eurex.com/ec-en/services/risk-parameters/                                                          |
