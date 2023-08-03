@@ -40,7 +40,7 @@ As of August 2023, the application downloads the latest margin update documents 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## 2. User Interface Components
+# 2. User Interface Components
 
 This section highlights the components of the margin_scraper.exe user interface. Refer to the description below for more information.
 
