@@ -10,6 +10,9 @@ title: Margin Scraper
 * This application and related guides are created by Kok Hai, Software Intern at Phillip Nova, in tandem with Xiao Tian, Operations and Settlements Department.
 
 ## **Overview**
+
+<img src="images/margin scraper welcome message.png" width="500" /> 
+
 As of August 2023, the application downloads the latest margin update documents from the following exchanges:
 
 |     | Exchange     | URL                                                                                                              |
