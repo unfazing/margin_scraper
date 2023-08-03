@@ -36,10 +36,10 @@ For Windows:
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-## **Structure of Dictionary**
+## **Defining List of Websites**
 The list of margin websites and the elements to be scraped are defined in a dictionary that is generated with the `generateDict` function.
 
-The dictionary takes in the `exchange name` as the KEY and a list of 3 objects as the VALUE. The first object in the list is the `url`, followed by the `css element` on the webpage and the `index` of the element on the webpage.
+The dictionary uses the `exchange name` as the KEY and a list of 3 objects as the VALUE. The first object in the list is the `url`, followed by the `css element` on the webpage and the `index` of the element on the webpage.
 
 Example: 
 - KEY = 'CME'
