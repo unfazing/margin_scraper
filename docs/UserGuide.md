@@ -8,7 +8,7 @@ title: User Guide
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-# 1. Introduction
+# **1. Introduction**
 
 This user guide will help you effectively utilise the `margin_scraper.exe` application and troubleshoot any minor issues.
 
@@ -40,7 +40,7 @@ As of August 2023, the application downloads the latest margin update documents 
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-# 2. User Interface Components
+# **2. User Interface Components**
 
 This section highlights the components of the margin_scraper.exe user interface. Refer to the description below for more information.
 
@@ -62,7 +62,7 @@ _Folder structure created after the application is run._
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
-# 3. Quick Start
+# **3. Quick Start**
 
 1. Ensure you have Microsoft Edge installed in your Computer. It should come pre-installed with every Windows PC. If you don't have it, you can install it from the Microsoft Store.
 
@@ -77,13 +77,13 @@ _Folder structure created after the application is run._
 6. The application will open a new Edge browser window, and you can leave it to run in the background!
 
 --------------------------------------------------------------------------------------------------------------------
-# 4. FAQ
+# **4. FAQ**
 
-###**Q**: *The application is unable to download particular files, what should I do?* <br>
+### **Q**: *The application is unable to download particular files, what should I do?* <br>
 **A**: Restart your computer and run the application again. If the download still fails, check the respective website where the failed download occurs. If the website has changed or the problem persists, notify the developer to update the source code. If the failed download is on the CME exchange, check that you have logged in and are kept logged in to the CME website on your normal Edge browser.
 
-###**Q**: *My Edge browser updated to a new version and the application no longer runs.* <br>
+### **Q**: *My Edge browser updated to a new version and the application no longer runs.* <br>
 **A**: Notify the developer about your new browser version so that they can update the MSEdge WebDriver version packaged with the application.
 
-###**Q**: *I want to add more websites to scrape from.* <br>
+### **Q**: *I want to add more websites to scrape from.* <br>
 **A**: Unfortunately, as every website is different, the code logic will need to be written specific for each site. The only way to add or remove websites is to notify the developer and inform them about the changes you require.
