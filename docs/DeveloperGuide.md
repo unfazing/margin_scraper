@@ -102,7 +102,7 @@ However, this means that a developer is required to maintain the function of the
 ## **Retaining Browser User Data**
 For CME exchange, the user needs to be logged in to download the margin update document. By default, a temporary profile is created at each launch of the Selenium MSEdge WebDriver which means that the user will need to log in to the website every single time. 
 
-To overcome this, every time the programme is run, a copy of the User Data for Edge (located at `"C:\\Users\\UserName\\AppData\\Local\\Microsoft\\Edge\\User Data"`) is made in the `./temp` directory. The user simply has to be logged in to the websites on their usual Edge browser, and the programme will use the copied profile (with all cookies, bookmarks, logins etc.) to run the scraping. At the start and at the end of the programme, the `./temp` directory is cleared.
+To overcome this, every time the programme is run, a copy of the User Data for Edge (located at `"C:/Users/{UserName}/AppData/Local/Microsoft/Edge/User Data"`) is made in the `./temp` directory. The user simply has to be logged in to the websites on their usual Edge browser, and the programme will use the copied profile (with all cookies, bookmarks, logins etc.) to run the scraping. At the start and at the end of the programme, the `./temp` directory is cleared.
 
 ### Potential Issues
 1. If the user's saved data on the Edge browser is massive, creating and deleting the user data in the temp directory requires a lot of time and space. 
