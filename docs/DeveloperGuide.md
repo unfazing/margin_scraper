@@ -31,6 +31,7 @@ For Windows:
 4. Edge should be installed on your Windows PC. Otherwise, install it from the Microsoft Store
 5. Check the version of your Edge browser. Type (or copy and paste) `edge://version` into the Edge browser address bar and press Enter.
 6. If it is no longer version 115, download a new [MS Edge WebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/) and place the driver in the `./driver` directory.
+
 --------------------------------------------------------------------------------------------------------------------
 <div style="page-break-after: always;"></div>
 
@@ -67,6 +68,9 @@ For each website, a suitable and specific CSS element should be chosen to downlo
    3.3 If the `css element` identifies multiple links and the latest Margin Update document is not the first link, check if the sequence of the links is fixed. If it is fixed you can use the appropriate index to access the correct link.
 4. Note if there are any additional steps you need to take to access the download link like logging into an account or selecting certain parameters. You will need to write additional logic in the `download_files` function for these websites.
 
+--------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
+
 ## How to create an executable for distribution to end user?
 By creating a standalone executable for the application, it becomes simple for the user to run it without needing any software dependencies (i.e. Python, Selenium or the WebDriver). Additionally, it abstracts away access to the source code which prevents the end user from inadvertently changing and potentially breaking the code.
 
@@ -88,6 +92,9 @@ However, this means that a developer is required to maintain the function of the
 5. After successfully running the command, the new directories, `build` and `dist`, and a new file, `margin_scraper.spec` should appear.
 6. `build` and `margin_scraper.spec` are non-essential and can be removed.
 7. The executable to be distributed to the end user can be found in the `dist` directory.
+
+--------------------------------------------------------------------------------------------------------------------
+<div style="page-break-after: always;"></div>
 
 ## **Retaining Browser User Data**
 For CME exchange, the user needs to be logged in to download the margin update document. By default, a temporary profile is created at each launch of the Selenium MSEdge WebDriver which means that the user will need to log in to the website every single time. 
